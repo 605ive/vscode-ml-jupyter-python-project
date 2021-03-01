@@ -17,6 +17,9 @@ RUN if ! cat /etc/group | grep -e "^pip-global:" > /dev/null 2>&1; then groupadd
 # RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
 #    && rm -rf /tmp/pip-tmp
 
+RUN pip install ipykernel pandas scipy joblib threadpoolctl numpy
+RUN pip install -U scikit-learn
+
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update \
 #     && export DEBIAN_FRONTEND=noninteractive \
